@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './demo/home/home.module';
 import { GeneseModule } from 'genese-angular';
 
@@ -21,7 +21,7 @@ import { GeneseModule } from 'genese-angular';
     exports: [
         HttpClientModule
     ],
-    providers: [],
+    providers: [HttpClient],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

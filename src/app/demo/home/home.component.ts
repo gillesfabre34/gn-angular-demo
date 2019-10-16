@@ -13,7 +13,6 @@ import { Genese, GeneseService, GetAllResponse, Language } from 'genese-angular'
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements AfterViewInit, OnInit {
 
     // --------------------------------------------------
@@ -82,7 +81,19 @@ export class HomeComponent implements AfterViewInit, OnInit {
     getOne(id: string): void {
         // this.method = this.methodService.getMethod('getOne');
         this.booksGenese.getOne('1').subscribe((book: Books) => {
-            console.log('%c GeneseAbstract getOne home ', 'font-weight: bold; color: green;', book);
+            console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
+        });
+    }
+
+
+    /**
+     * Get one book for a given id
+     * @param id
+     */
+    getOneCustom(): void {
+        // this.method = this.methodService.getMethod('getOne');
+        this.booksGenese.getOneCustom({path: '/books/2'}).subscribe((book: Books) => {
+            console.log('%c GeneseAbstract getOneCustom book ', 'font-weight: bold; color: teal;', book);
         });
     }
 
@@ -186,6 +197,12 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
     create() {
         this.method = this.methodService.getMethod('create');
+    }
+
+
+
+    update() {
+        this.method = this.methodService.getMethod('update');
     }
 
 
