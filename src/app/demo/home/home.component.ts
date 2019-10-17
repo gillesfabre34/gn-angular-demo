@@ -5,7 +5,7 @@ import { Books, LightBookEditor } from './models/books.model';
 import { ResponseStatus } from '../enums/response-status';
 import { Method } from './models/method.model';
 import { MethodService } from './services/method.service';
-import { Genese, GeneseService, GetAllResponse, Language } from 'genese-angular';
+import { Genese, GeneseService, GetAllResponse, Language, RequestMethod } from 'genese-angular';
 
 
 @Component({
@@ -92,7 +92,12 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneCustom(): void {
         // this.method = this.methodService.getMethod('getOne');
-        this.booksGenese.getOneCustom({path: '/books/2'}).subscribe((book: Books) => {
+        this.booksGenese.customRequest({
+            path: '/books/get-one-custom',
+            method: RequestMethod.POST,
+            body: {id: 2}
+        }).subscribe((book: Books) => {
+            // this.booksGenese.getOneCustom({path: '/books/2'}).subscribe((book: Books) => {
             console.log('%c GeneseAbstract getOneCustom book ', 'font-weight: bold; color: teal;', book);
         });
     }
