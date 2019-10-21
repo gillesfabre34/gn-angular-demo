@@ -60,6 +60,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     ngOnInit(): void {
         this.paginator.pageIndex = this.pageIndex;
         this.paginator.pageSize = this.pageSize;
+        this.getAll();
     }
 
 
@@ -135,7 +136,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getAll(): void {
         this.method = this.methodService.getMethod('getAll');
-        this.displayedColumns = ['id', 'author', 'title', 'description'];
+        this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
         this.booksGenese
             .getAll()
             .pipe()
@@ -179,7 +180,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getAllWithPagination(): void {
         this.method = this.methodService.getMethod('getAllWithPagination');
-        this.displayedColumns = ['id', 'author', 'title', 'description'];
+        this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
         this.booksGenese
             .getAll(
                 {
@@ -195,6 +196,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.method = this.methodService.getMethod('delete');
         this.booksGenese.delete(id).subscribe((response: ResponseStatus) => {
             console.log('%c GeneseAbstract delete response ', 'font-weight: bold; color: brown;', response);
+            this.getAll();
         });
     }
 
@@ -203,6 +205,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.method = this.methodService.getMethod('create');
         this.booksGenese.create(BOOK).subscribe((newBook: Books) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
+            this.getAll();
         });
     }
 
