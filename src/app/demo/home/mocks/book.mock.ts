@@ -102,4 +102,4 @@ export const BOOKS = [
     },
 ];
 
-export const BOOK = BOOKS[0];
+export const BOOK = BOOKS[9];

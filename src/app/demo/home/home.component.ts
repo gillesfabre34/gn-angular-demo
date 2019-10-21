@@ -6,6 +6,7 @@ import { ResponseStatus } from '../enums/response-status';
 import { Method } from './models/method.model';
 import { MethodService } from './services/method.service';
 import { Genese, GeneseService, GetAllResponse, Language, RequestMethod } from 'genese-angular';
+import { BOOK } from './mocks/book.mock';
 
 
 @Component({
@@ -92,9 +93,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneCustom(): void {
         // this.method = this.methodService.getMethod('getOne');
-        this.booksGenese.customRequest({
-            path: '/books/get-one-custom',
-            method: RequestMethod.POST,
+        this.booksGenese.request(RequestMethod.POST, '/books/get-one-custom', {
             body: {id: 2}
         }).subscribe((book: Books) => {
             // this.booksGenese.getOneCustom({path: '/books/2'}).subscribe((book: Books) => {
@@ -151,7 +150,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.method = this.methodService.getMethod('getAllPrimitives');
         this.categoriesGenese
             .getAll({
-                gnPath: `/books/${id}/categories`
+                path: `/books/${id}/categories`
             })
             .pipe()
             .subscribe((data: GetAllResponse<String>) => {
@@ -159,7 +158,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
             });
         this.codesGenese
             .getAll({
-                gnPath: `/books/${id}/codes`
+                path: `/books/${id}/codes`
             })
             .pipe()
             .subscribe((data: GetAllResponse<Number>) => {
@@ -167,7 +166,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
             });
         this.booleansGenese
             .getAll({
-                gnPath: `/books/${id}/booleans`
+                path: `/books/${id}/booleans`
             })
             .pipe()
             .subscribe((data: GetAllResponse<Boolean>) => {
@@ -184,8 +183,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.booksGenese
             .getAll(
                 {
-                    gnPage: this.paginator.pageIndex,
-                    gnLimit: this.paginator.pageSize
+                    page: this.paginator.pageIndex,
+                    limit: this.paginator.pageSize
                 })
             .pipe()
             .subscribe((data: GetAllResponse<Books>) => this.displayMatTableDataSource(data));
@@ -202,6 +201,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
     create() {
         this.method = this.methodService.getMethod('create');
+        this.booksGenese.create(BOOK).subscribe((newBook: Books) => {
+            console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
+        });
     }
 
 
