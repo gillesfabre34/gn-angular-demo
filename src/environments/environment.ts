@@ -5,7 +5,12 @@
 export const environment = {
   production: false,
     genese: {
-        api: 'http://localhost:3000'
+        api: 'http://localhost:3000',
+        // extract: 'gnExtract',
+        pagination: {
+            limit: 'limit',
+            page: 'page'
+        }
     }
 };
 

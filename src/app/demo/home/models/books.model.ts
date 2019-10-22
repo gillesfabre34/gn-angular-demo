@@ -70,7 +70,7 @@ export class LightBookEditor {
 export function GnRename(backendProperty: string) {
     // tslint:disable-next-line:only-arrow-functions
     return function(target: any, propertyKey: string) {
-        console.log('%c GnRename target ', 'font-weight: bold; color: fuchsia;', target);
+        // console.log('%c GnRename target ', 'font-weight: bold; color: fuchsia;', target);
         if (!target.constructor.gnRename) {
             target.constructor.gnRename = {};
         }

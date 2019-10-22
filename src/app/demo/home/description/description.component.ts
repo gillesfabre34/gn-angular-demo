@@ -31,6 +31,5 @@ export class DescriptionComponent implements OnInit {
     // --------------------------------------------------
 
     ngOnInit(): void {
-        // console.log('%c ngOnInit this.methodName ', 'font-weight: bold; color: blue;', this.methodName);
     }
 }
