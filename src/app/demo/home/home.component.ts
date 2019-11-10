@@ -30,6 +30,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     public method: Method = {};
     public pageIndex = 0;
     public pageSize = 5;
+    public path = '/books';
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -82,7 +83,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOne(id: string): void {
         // this.method = this.methodService.getMethod('getOne');
-        this.booksGenese.getOne('1').subscribe((book: Books) => {
+        this.booksGenese.getOne(this.path, '1').subscribe((book: Books) => {
             console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
         });
     }
@@ -124,7 +125,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneTranslated(id: string, language: string): void {
         this.method = this.methodService.getMethod('getOneTranslated');
-        this.booksGenese.getOne(id).subscribe(book => {
+        this.booksGenese.getOne(this.path, id).subscribe(book => {
             const objectTranslated = this.booksGenese.translate(book, language as Language);
             console.log('%c GeneseAbstract getOneTranslated objectTranslated ', 'font-weight: bold; color: black;', objectTranslated);
         });
@@ -138,7 +139,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.method = this.methodService.getMethod('getAll');
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
         this.booksGenese
-            .getAll()
+            .getAll('/books')
             .pipe()
             .subscribe((data: GetAllResponse<Books>) => this.displayMatTableDataSource(data));
     }
@@ -150,25 +151,19 @@ export class HomeComponent implements AfterViewInit, OnInit {
     getAllPrimitives(id: string): void {
         this.method = this.methodService.getMethod('getAllPrimitives');
         this.categoriesGenese
-            .getAll({
-                path: `/books/${id}/categories`
-            })
+            .getAll(`/books/${id}/categories`)
             .pipe()
             .subscribe((data: GetAllResponse<String>) => {
                 console.log('%c getAllPrimitives categories ', 'font-weight: bold; color: brown;', data);
             });
         this.codesGenese
-            .getAll({
-                path: `/books/${id}/codes`
-            })
+            .getAll(`/books/${id}/codes`)
             .pipe()
             .subscribe((data: GetAllResponse<Number>) => {
                 console.log('%c getAllPrimitives codes ', 'font-weight: bold; color: brown;', data);
             });
         this.booleansGenese
-            .getAll({
-                path: `/books/${id}/booleans`
-            })
+            .getAll(`/books/${id}/booleans`)
             .pipe()
             .subscribe((data: GetAllResponse<Boolean>) => {
                 console.log('%c getAllPrimitives codes ', 'font-weight: bold; color: brown;', data);
@@ -183,6 +178,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
         this.booksGenese
             .getAll(
+                this.path,
                 {
                     page: this.paginator.pageIndex,
                     limit: this.paginator.pageSize

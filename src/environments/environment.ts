@@ -3,13 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+    production: false,
     genese: {
         api: 'http://localhost:3000',
         // extract: 'gnExtract',
         pagination: {
             limit: 'limit',
-            page: 'page'
+            page: 'next'
         }
     }
 };
