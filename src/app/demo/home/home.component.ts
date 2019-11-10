@@ -127,7 +127,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.method = this.methodService.getMethod('getOneTranslated');
         this.booksGenese.getOne(this.path, id).subscribe(book => {
             const objectTranslated = this.booksGenese.translate(book, language as Language);
-            console.log('%c GeneseAbstract getOneTranslated objectTranslated ', 'font-weight: bold; color: black;', objectTranslated);
+            console.log('%c getOneTranslated objectTranslated ', 'font-weight: bold; color: black;', objectTranslated);
         });
     }
 
@@ -141,7 +141,10 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.booksGenese
             .getAll('/books')
             .pipe()
-            .subscribe((data: GetAllResponse<Books>) => this.displayMatTableDataSource(data));
+            .subscribe((data: GetAllResponse<Books>) => {
+                console.log('%c getAll data ', 'font-weight: bold; color: black;', data);
+                this.displayMatTableDataSource(data);
+            });
     }
 
 
@@ -217,7 +220,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
      * @param data
      */
     displayMatTableDataSource(data) {
-        console.log('%c GeneseAbstract getAllWithPagination data ', 'font-weight: bold; color: green;', data);
         this.dataSource = data && Array.isArray(data.results) ? new MatTableDataSource(data.results) : new MatTableDataSource([]);
         this.paginator.length = data && data.totalResults ? data.totalResults : 0;
         this.emptyList = this.paginator.length === 0;
