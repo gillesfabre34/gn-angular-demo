@@ -26,7 +26,7 @@ export class Books {
         name: '',
         year: '',
         gnTranslate: {
-            gnKey: {
+            gnIndexableKey: {
                 country: ''
             }
         }
@@ -51,7 +51,7 @@ export class Books {
             type: string
         }
     } = {
-        gnKey: {
+        gnIndexableKey: {
             type: ''
         }
     };

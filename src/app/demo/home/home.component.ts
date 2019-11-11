@@ -149,7 +149,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
 
     /**
-     * Get all the books with pagination
+     * Get all with primitive arrays
      */
     getAllPrimitives(id: string): void {
         this.method = this.methodService.getMethod('getAllPrimitives');
