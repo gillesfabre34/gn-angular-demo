@@ -30,7 +30,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     public method: Method = {};
     public pageIndex = 0;
     public pageSize = 5;
-    public path = '/books';
+    public rootPath = '/books';
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -83,7 +83,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOne(id: string): void {
         // this.method = this.methodService.getMethod('getOne');
-        this.booksGenese.getOne(this.path, '1').subscribe((book: Books) => {
+        this.booksGenese.getOne(this.rootPath, '1').subscribe((book: Books) => {
             console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
         });
     }
@@ -95,7 +95,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneCustom(): void {
         // this.method = this.methodService.getMethod('getOne');
-        this.booksGenese.request(RequestMethod.POST, '/books/get-one-custom', {
+        this.booksGenese.request('/books/get-one-custom', RequestMethod.POST, {
             body: {id: 2}
         }).subscribe((book: Books) => {
             // this.booksGenese.getOneCustom({path: '/books/2'}).subscribe((book: Books) => {
@@ -112,7 +112,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneExtract(id: string): void {
         this.method = this.methodService.getMethod('getOneExtract');
-        this.booksGenese.getOneExtract<LightBookEditor>(id, LightBookEditor).subscribe((editor: LightBookEditor) => {
+        this.booksGenese.getOneExtract<LightBookEditor>(this.rootPath, id, LightBookEditor).subscribe((editor: LightBookEditor) => {
             console.log('%c GeneseAbstract getOneExtract editor ', 'font-weight: bold; color: fuchsia;', editor);
         });
     }
@@ -125,7 +125,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
      */
     getOneTranslated(id: string, language: string): void {
         this.method = this.methodService.getMethod('getOneTranslated');
-        this.booksGenese.getOne(this.path, id).subscribe(book => {
+        this.booksGenese.getOne(this.rootPath, id).subscribe(book => {
             const objectTranslated = this.booksGenese.translate(book, language as Language);
             console.log('%c getOneTranslated objectTranslated ', 'font-weight: bold; color: black;', objectTranslated);
         });
@@ -181,7 +181,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
         this.booksGenese
             .getAll(
-                this.path,
+                this.rootPath,
                 {
                     page: this.paginator.pageIndex,
                     limit: this.paginator.pageSize
@@ -192,8 +192,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
 
     delete(id: string): void {
-        this.method = this.methodService.getMethod('delete');
-        this.booksGenese.delete(id).subscribe((response: ResponseStatus) => {
+        this.booksGenese.delete(this.rootPath, id).subscribe((response: ResponseStatus) => {
             console.log('%c GeneseAbstract delete response ', 'font-weight: bold; color: brown;', response);
             this.getAll();
         });
@@ -202,7 +201,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
     create() {
         this.method = this.methodService.getMethod('create');
-        this.booksGenese.create(BOOK).subscribe((newBook: Books) => {
+        this.booksGenese.create(this.rootPath, BOOK).subscribe((newBook: Books) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
             this.getAll();
         });
