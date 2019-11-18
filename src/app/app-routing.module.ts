@@ -6,6 +6,7 @@ import { GetOneComponent } from './demo/home/get-one/get-one.component';
 import { GetOneCustomComponent } from './demo/home/get-one-custom/get-one-custom.component';
 import { GetAllComponent } from './demo/home/get-all/get-all.component';
 import { GetAllCustomComponent } from './demo/home/get-all-custom/get-all-custom.component';
+import { CreateComponent } from './demo/home/create/create.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
         component: HomeComponent,
         canActivate: [AuthGuardService],
         children: [
+            {path: 'create', component: CreateComponent, canActivate: [AuthGuardService]},
             {path: 'get-all', component: GetAllComponent, canActivate: [AuthGuardService]},
             {path: 'get-all-custom', component: GetAllCustomComponent, canActivate: [AuthGuardService]},
             {path: 'get-one', component: GetOneComponent, canActivate: [AuthGuardService]},

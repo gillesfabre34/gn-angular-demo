@@ -7,10 +7,12 @@ import { GetAllComponent } from './get-all/get-all.component';
 import { DataListComponent } from './data-list/data-list.component';
 import { GetOneCustomComponent } from './get-one-custom/get-one-custom.component';
 import { GetAllCustomComponent } from './get-all-custom/get-all-custom.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
     declarations: [
+        CreateComponent,
         DataListComponent,
         GetAllComponent,
         GetAllCustomComponent,

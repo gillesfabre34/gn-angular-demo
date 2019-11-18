@@ -4,7 +4,7 @@ import { GeneseModelEnvironment } from 'genese-angular';
 export class Book {
 
     @GnRename('isAvailable')
-    public available = false;
+    public available ?= false;
 
     @GnRename('bookTitle')
     public title ?= '';
@@ -16,7 +16,7 @@ export class Book {
     public categories?: string[] = [''];
     public codes?: number[] = [0];
     public description ? = '';
-    public editions?: [{
+    public editions?: {
         name?: string,
         year?: string,
         gnTranslate ?: {
@@ -24,7 +24,7 @@ export class Book {
                 country: string
             }
         }
-    }] = [{
+    }[] = [{
         name: '',
         year: '',
         gnTranslate: {
@@ -57,7 +57,7 @@ export class Book {
             type: ''
         }
     };
-    public genese: GeneseModelEnvironment = {
+    public genese?: GeneseModelEnvironment = {
         path: '/books'
     };
 }

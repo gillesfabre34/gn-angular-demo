@@ -60,16 +60,6 @@ export class DataListComponent implements AfterViewInit, OnInit {
     }
 
 
-
-
-    create() {
-        this.booksGenese.create(homeEnv.path, BOOK).subscribe((newBook: Book) => {
-            console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
-            this.getAll();
-        });
-    }
-
-
     delete(id: string): void {
         this.booksGenese.delete(homeEnv.path, id).subscribe((response: ResponseStatus) => {
             console.log('%c GeneseAbstract delete response ', 'font-weight: bold; color: brown;', response);
@@ -87,7 +77,7 @@ export class DataListComponent implements AfterViewInit, OnInit {
         // console.log('%c getAll this.booksGenese ', 'font-weight: bold; color: black;', this.booksGenese);
         // console.log('%c getAll homeEnv.path ', 'font-weight: bold; color: black;', homeEnv.path);
         this.booksGenese
-            .getAll(homeEnv.path)
+            .getAll()
             .subscribe((response: Book[]) => {
                 console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
                 if (Array.isArray(response)) {
@@ -112,16 +102,6 @@ export class DataListComponent implements AfterViewInit, OnInit {
                 console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
                 this.displayMatTableDataSource(response);
             });
-    }
-
-    /**
-     * Get one book for a given id
-     * @param id
-     */
-    getOne(id: string): void {
-        this.booksGenese.getOne(homeEnv.path, '1').subscribe((book: Book) => {
-            console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
-        });
     }
 
 

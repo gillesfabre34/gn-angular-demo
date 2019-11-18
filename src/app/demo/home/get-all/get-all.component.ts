@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GeneseModelEnvironment } from 'genese-angular';
 
 
 @Component({
