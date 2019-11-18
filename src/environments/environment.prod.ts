@@ -3,8 +3,10 @@ export const environment = {
     genese: {
         api: 'http://localhost:3000',
         pagination: {
-            limit: 'limit',
-            page: 'next'
+            pageIndex: 'pIndex',
+            pageSize: 'pSize',
+            results: 'data',
+            totalResults: 'total'
         }
     }
 };
