@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from './models/book.model';
-import { Genese, GeneseService } from 'genese-angular';
 import { Router } from '@angular/router';
 import { Method } from './models/method.model';
 
@@ -16,12 +14,7 @@ export class HomeComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booleansGenese: Genese<Boolean>;
-    public booksGenese: Genese<Book>;
-    public categoriesGenese: Genese<String>;
-    public codesGenese: Genese<Number>;
     public method: Method = undefined;
-    public rootPath = '/books';
 
 
 
@@ -30,12 +23,8 @@ export class HomeComponent implements OnInit {
     // --------------------------------------------------
 
     constructor(
-        private geneseService: GeneseService,
         private router: Router
     ) {
-        this.booleansGenese = geneseService.getGeneseInstance(Boolean);
-        this.categoriesGenese = geneseService.getGeneseInstance(String);
-        this.codesGenese = geneseService.getGeneseInstance(Number);
     }
 
 
@@ -47,7 +36,6 @@ export class HomeComponent implements OnInit {
     }
 
     displayMethod(method: Method): void {
-        // this.method = method;
         this.router.navigate([method]);
     }
 
@@ -55,14 +43,6 @@ export class HomeComponent implements OnInit {
     //                 CALLS TO GENESE
     // --------------------------------------------------
 
-
-    // create() {
-    //     this.booksGenese.create(this.rootPath, BOOK).subscribe((newBook: Book) => {
-    //         console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
-    //         this.getAll();
-    //     });
-    // }
-    //
     //
     // delete(id: string): void {
     //     this.booksGenese.delete(this.rootPath, id).subscribe((response: ResponseStatus) => {
@@ -109,10 +89,5 @@ export class HomeComponent implements OnInit {
     //             console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
     //             this.displayMatTableDataSource(response);
     //         });
-    // }
-
-
-
-    update() {
-    }
+    // }e() {
 }

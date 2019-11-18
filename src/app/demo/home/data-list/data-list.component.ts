@@ -1,11 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { Genese, GeneseService, GetAllResponse } from 'genese-angular';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Book } from '../models/book.model';
 import { tap } from 'rxjs/operators';
 import { homeEnv } from '../homeEnv';
-import { ResponseStatus } from '../../enums/response-status';
-import { BOOK } from '../mocks/book.mock';
 
 
 @Component({
@@ -13,11 +11,15 @@ import { BOOK } from '../mocks/book.mock';
     templateUrl: './data-list.component.html',
     styleUrls: ['./data-list.component.scss']
 })
-export class DataListComponent implements AfterViewInit, OnInit {
+export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
 
     // --------------------------------------------------
     //                     PROPERTIES
     // --------------------------------------------------
+
+    @Input() data: any[] = [];
+    @Output() delete: EventEmitter<string> = new EventEmitter<any>();
+    @Output() update: EventEmitter<string> = new EventEmitter<any>();
 
     public booksGenese: Genese<Book>;
     public dataSource = new MatTableDataSource<Book>();
@@ -42,10 +44,17 @@ export class DataListComponent implements AfterViewInit, OnInit {
      * Component initialization
      */
     ngOnInit(): void {
-        // console.log('%c ngOnInit this.paginator ', 'font-weight: bold; color: fuchsia;', this.paginator);
+        console.log('%c ngOnInit this.data ', 'font-weight: bold; color: fuchsia;', this.data);
         this.paginator.pageIndex = this.pageIndex;
         this.paginator.pageSize = this.pageSize;
         this.getAll();
+    }
+
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.data) {
+            this.getAll();
+        }
     }
 
     /**
@@ -60,11 +69,13 @@ export class DataListComponent implements AfterViewInit, OnInit {
     }
 
 
-    delete(id: string): void {
-        this.booksGenese.delete(homeEnv.path, id).subscribe((response: ResponseStatus) => {
-            console.log('%c GeneseAbstract delete response ', 'font-weight: bold; color: brown;', response);
-            this.getAll();
-        });
+    deleteElement(id: string): void {
+        this.delete.emit(id);
+    }
+
+
+    updateElement(id: string): void {
+        this.update.emit(id);
     }
 
 
@@ -74,16 +85,19 @@ export class DataListComponent implements AfterViewInit, OnInit {
      */
     getAll(): void {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
+        if (Array.isArray(this.data)) {
+            this.displayMatTableDataSource({results: this.data, totalResults: this.data.length});
+        }
         // console.log('%c getAll this.booksGenese ', 'font-weight: bold; color: black;', this.booksGenese);
         // console.log('%c getAll homeEnv.path ', 'font-weight: bold; color: black;', homeEnv.path);
-        this.booksGenese
-            .getAll()
-            .subscribe((response: Book[]) => {
-                console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
-                if (Array.isArray(response)) {
-                    this.displayMatTableDataSource({results: response, totalResults: response.length});
-                }
-            });
+        // this.booksGenese
+        //     .getAll()
+        //     .subscribe((response: Book[]) => {
+        //         console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
+        //         if (Array.isArray(response)) {
+        //             this.displayMatTableDataSource({results: response, totalResults: response.length});
+        //         }
+        //     });
     }
 
     /**

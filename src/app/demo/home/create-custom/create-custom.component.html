@@ -1,0 +1,8 @@
+<div class="method-container">
+    <p class="title">createCustom(path: string, body?: object, options?: RequestOptions): Observable< T | any ></p>
+    <p>createCustom() method is used to add a T object in database with a POST http request</p>
+    <p>Contrary to create() method, you can use a custom api path and you don't need to parameter your model with a genese property. Moreover, the parameter "body" can be any object : you don't need to use a body with T type.</p>
+    <p>The backend must wait a GET http request.</p>
+    <p>In this example, the createCustom() method adds a new book with the NestJS backend.</p>
+    <p>Open your navigator console. In the tab "Network", you'll find the data received from POST request. In the tab "Console", you'll can compare these original data with the formatted objects sent as Observable by Genese. As you can see, Genese formatted the returned object with "Book" type.</p>
+</div>
