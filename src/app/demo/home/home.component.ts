@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Books } from './models/books.model';
+import { Book } from './models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
+import { Router } from '@angular/router';
+import { Method } from './models/method.model';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
     // --------------------------------------------------
 
     public booleansGenese: Genese<Boolean>;
-    public booksGenese: Genese<Books>;
+    public booksGenese: Genese<Book>;
     public categoriesGenese: Genese<String>;
     public codesGenese: Genese<Number>;
     public method: Method = undefined;
@@ -29,6 +31,7 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private geneseService: GeneseService,
+        private router: Router
     ) {
         this.booleansGenese = geneseService.getGeneseInstance(Boolean);
         this.categoriesGenese = geneseService.getGeneseInstance(String);
@@ -44,7 +47,8 @@ export class HomeComponent implements OnInit {
     }
 
     displayMethod(method: Method): void {
-        this.method = method;
+        // this.method = method;
+        this.router.navigate([method]);
     }
 
     // --------------------------------------------------
@@ -53,7 +57,7 @@ export class HomeComponent implements OnInit {
 
 
     // create() {
-    //     this.booksGenese.create(this.rootPath, BOOK).subscribe((newBook: Books) => {
+    //     this.booksGenese.create(this.rootPath, BOOK).subscribe((newBook: Book) => {
     //         console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
     //         this.getAll();
     //     });
@@ -101,7 +105,7 @@ export class HomeComponent implements OnInit {
     //                 pageIndex: this.paginator.pageIndex,
     //                 pageSize: this.paginator.pageSize
     //             })
-    //         .subscribe((response: {results: Books[], totalResults: number}) => {
+    //         .subscribe((response: {results: Book[], totalResults: number}) => {
     //             console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
     //             this.displayMatTableDataSource(response);
     //         });
@@ -111,8 +115,4 @@ export class HomeComponent implements OnInit {
 
     update() {
     }
-
-
 }
-
-export type Method = 'getOne' | 'getAll' | 'getAllWithPagination';

@@ -11,14 +11,20 @@
             <div class="console-button" (click)="displayMethod('delete')">
                 <span>delete()</span>
             </div>
-            <div class="console-button" (click)="displayMethod('getAll')">
+            <div class="console-button" (click)="displayMethod('get-all')">
                 <span>getAll()</span>
             </div>
-            <div class="console-button" (click)="displayMethod('getAllWithPagination')">
+            <div class="console-button" (click)="displayMethod('get-all-custom')">
+                <span>getAllCustom()</span>
+            </div>
+            <div class="console-button" (click)="displayMethod('get-all-with-pagination')">
                 <span>getAllWithPagination()</span>
             </div>
-            <div class="console-button" (click)="displayMethod('getOne')">
+            <div class="console-button" (click)="displayMethod('get-one')">
                 <span>getOne()</span>
+            </div>
+            <div class="console-button" (click)="displayMethod('get-one-custom')">
+                <span>getOneCustom()</span>
             </div>
             <div class="console-button" (click)="displayMethod('translate')">
                 <span>translate()</span>
@@ -29,11 +35,7 @@
         </div>
         <div class="right-part">
             <div class="method-header">
-                <div *ngIf="!method" class="home-header">
-                    <h1>genese-angular demo</h1>
-                </div>
-                <app-get-one *ngIf="method === 'getOne'"></app-get-one>
-                <app-get-all *ngIf="method === 'getAll'"></app-get-all>
+                <router-outlet></router-outlet>
             </div>
 
         </div>

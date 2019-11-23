@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Genese, GeneseService, GetAllResponse } from 'genese-angular';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { Books } from '../models/books.model';
+import { Book } from '../models/book.model';
 import { tap } from 'rxjs/operators';
 import { homeEnv } from '../homeEnv';
 import { ResponseStatus } from '../../enums/response-status';
@@ -19,8 +19,8 @@ export class DataListComponent implements AfterViewInit, OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booksGenese: Genese<Books>;
-    public dataSource = new MatTableDataSource<Books>();
+    public booksGenese: Genese<Book>;
+    public dataSource = new MatTableDataSource<Book>();
     public displayedColumns: string[] = [];
     public emptyList = true;
     public pageIndex = 0;
@@ -35,14 +35,14 @@ export class DataListComponent implements AfterViewInit, OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Books);
+        this.booksGenese = geneseService.getGeneseInstance(Book);
     }
 
     /**
      * Component initialization
      */
     ngOnInit(): void {
-        console.log('%c ngOnInit this.paginator ', 'font-weight: bold; color: fuchsia;', this.paginator);
+        // console.log('%c ngOnInit this.paginator ', 'font-weight: bold; color: fuchsia;', this.paginator);
         this.paginator.pageIndex = this.pageIndex;
         this.paginator.pageSize = this.pageSize;
         this.getAll();
@@ -63,7 +63,7 @@ export class DataListComponent implements AfterViewInit, OnInit {
 
 
     create() {
-        this.booksGenese.create(homeEnv.path, BOOK).subscribe((newBook: Books) => {
+        this.booksGenese.create(homeEnv.path, BOOK).subscribe((newBook: Book) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
             this.getAll();
         });
@@ -84,11 +84,11 @@ export class DataListComponent implements AfterViewInit, OnInit {
      */
     getAll(): void {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
-        console.log('%c getAll this.booksGenese ', 'font-weight: bold; color: black;', this.booksGenese);
-        console.log('%c getAll homeEnv.path ', 'font-weight: bold; color: black;', homeEnv.path);
+        // console.log('%c getAll this.booksGenese ', 'font-weight: bold; color: black;', this.booksGenese);
+        // console.log('%c getAll homeEnv.path ', 'font-weight: bold; color: black;', homeEnv.path);
         this.booksGenese
             .getAll(homeEnv.path)
-            .subscribe((response: Books[]) => {
+            .subscribe((response: Book[]) => {
                 console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
                 if (Array.isArray(response)) {
                     this.displayMatTableDataSource({results: response, totalResults: response.length});
@@ -108,7 +108,7 @@ export class DataListComponent implements AfterViewInit, OnInit {
                     pageIndex: this.paginator.pageIndex,
                     pageSize: this.paginator.pageSize
                 })
-            .subscribe((response: {results: Books[], totalResults: number}) => {
+            .subscribe((response: {results: Book[], totalResults: number}) => {
                 console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
                 this.displayMatTableDataSource(response);
             });
@@ -119,7 +119,7 @@ export class DataListComponent implements AfterViewInit, OnInit {
      * @param id
      */
     getOne(id: string): void {
-        this.booksGenese.getOne(homeEnv.path, '1').subscribe((book: Books) => {
+        this.booksGenese.getOne(homeEnv.path, '1').subscribe((book: Book) => {
             console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
         });
     }
@@ -130,7 +130,7 @@ export class DataListComponent implements AfterViewInit, OnInit {
      * Display the books list in a MatTable with pagination
      * @param data
      */
-    displayMatTableDataSource(data: GetAllResponse<Books>) {
+    displayMatTableDataSource(data: GetAllResponse<Book>) {
         this.dataSource = data && Array.isArray(data.results) ? new MatTableDataSource(data.results) : new MatTableDataSource([]);
         this.paginator.length = data && data.totalResults ? data.totalResults : 0;
         this.emptyList = this.paginator.length === 0;

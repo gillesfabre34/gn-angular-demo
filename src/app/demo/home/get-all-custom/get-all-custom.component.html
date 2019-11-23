@@ -1,0 +1,11 @@
+<div class="method-container">
+    <p class="title">getAllCustom(path: string, params?: GetAllParams): Observable< T[] ></p>
+    <p>This method is used to get a list of objects from http GET request and to format them with T type.</p>
+    <p>Contrary to getAll() method, you can use a custom api path and you don't need to parameter your model with a genese property.</p>
+    <p>The backend must wait a GET http request.</p>
+    <p>In this example, the getAllCustom() method receives the list of books sent by the NestJS backend. </p>
+    <p>Open your navigator console. In the tab "Network", you'll find the data received from GET request. In the tab "Console", you'll can compare these original data with the formatted objects sent as Observable by Genese. As you can see, Genese formatted all these objects with "Book" type.</p>
+    <div class="dataList">
+        <app-data-list></app-data-list>
+    </div>
+</div>

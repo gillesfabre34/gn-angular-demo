@@ -5,13 +5,17 @@ import { CoreModule } from '../core/core.module';
 import { GetOneComponent } from './get-one/get-one.component';
 import { GetAllComponent } from './get-all/get-all.component';
 import { DataListComponent } from './data-list/data-list.component';
+import { GetOneCustomComponent } from './get-one-custom/get-one-custom.component';
+import { GetAllCustomComponent } from './get-all-custom/get-all-custom.component';
 
 
 @NgModule({
     declarations: [
         DataListComponent,
         GetAllComponent,
+        GetAllCustomComponent,
         GetOneComponent,
+        GetOneCustomComponent,
         HomeComponent
     ],
     imports: [

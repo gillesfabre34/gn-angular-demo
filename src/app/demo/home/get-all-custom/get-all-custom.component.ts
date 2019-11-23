@@ -1,23 +1,17 @@
 import { Component } from '@angular/core';
-import { GeneseModelEnvironment } from 'genese-angular';
 
 
 @Component({
     selector: 'app-get-all',
-    templateUrl: './get-all.component.html',
-    styleUrls: ['./get-all.component.scss']
+    templateUrl: './get-all-custom.component.html',
+    styleUrls: ['./get-all-custom.component.scss']
 })
-export class GetAllComponent {
+export class GetAllCustomComponent {
 
     // --------------------------------------------------
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public model = {
-        genese: {
-            path: '/books'
-        }
-    };
 
     // --------------------------------------------------
     //                     CONSTRUCTOR

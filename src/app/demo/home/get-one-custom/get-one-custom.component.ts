@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Genese, GeneseService } from 'genese-angular';
 import { Book } from '../models/book.model';
+import { homeEnv } from '../homeEnv';
 
 
 @Component({
-    selector: 'app-get-one',
-    templateUrl: './get-one.component.html',
-    styleUrls: ['./get-one.component.scss']
+    selector: 'app-get-one-custom',
+    templateUrl: './get-one-custom.component.html',
+    styleUrls: ['./get-one-custom.component.scss']
 })
-export class GetOneComponent implements OnInit {
+export class GetOneCustomComponent implements OnInit {
+
+    // --------------------------------------------------
+    //                     PROPERTIES
+    // --------------------------------------------------
 
     public booksGenese: Genese<Book>;
 
@@ -23,15 +28,15 @@ export class GetOneComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getOne('1');
+        this.getOneCustom('1');
     }
 
     /**
      * Get one book for a given id
      * @param id
      */
-    getOne(id: string): void {
-        this.booksGenese.getOne(id).subscribe((book: Book) => {
+    getOneCustom(id: string): void {
+        this.booksGenese.getOneCustom(homeEnv.path, 'rez').subscribe((book: Book) => {
             console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
         });
     }

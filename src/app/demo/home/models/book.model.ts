@@ -1,5 +1,7 @@
+import { GeneseModelEnvironment } from 'genese-angular';
 
-export class Books {
+
+export class Book {
 
     @GnRename('isAvailable')
     public available = false;
@@ -54,6 +56,9 @@ export class Books {
         gnIndexableKey: {
             type: ''
         }
+    };
+    public genese: GeneseModelEnvironment = {
+        path: '/books'
     };
 }
 
