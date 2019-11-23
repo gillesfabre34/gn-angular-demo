@@ -1,11 +1,11 @@
 <div class="method-container">
-    <p class="title">deleteCustom(path: string, id?: string, options?: RequestOptions): Observable< ResponseStatus ></p>
-    <p>deleteCustom() method is used to removed a T object in database with a DELETE http request and returns a response with ResponseStatus type.</p>
-    <p>Contrary to delete() method, you can use a custom api path and you don't need to parameter your model with a genese property.</p>
-    <p>However, the backend must wait a DELETE http request.</p>
-    <p>In this example, the deleteCustom() method removes a book with the help of the NestJS backend.</p>
-    <p>Open your navigator console. In the tab "Network", you'll find the data received from DELETE request.</p>
+    <p class="title">updateCustom(path: string, body?: object, options?: RequestOptions): Observable< T | any ></p>
+    <p>updateCustom() method is used to update a T object in database with a PUT http request and returns a response with ResponseStatus type.</p>
+    <p>Contrary to update() method, you can use a custom api path and you don't need to parameter your model with a genese property.</p>
+    <p>However, the backend must wait a PUT http request.</p>
+    <p>In this example, the updateCustom() method updates a book with the help of the NestJS backend.</p>
+    <p>Open your navigator console. In the tab "Network", you'll find the data received from PUT request.</p>
     <div class="dataList">
-        <app-data-list [data]="data" (delete)="deleteCustom($event)"></app-data-list>
+        <app-data-list [data]="data" (delete)="updateCustom($event)"></app-data-list>
     </div>
 </div>

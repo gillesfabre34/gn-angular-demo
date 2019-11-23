@@ -40,9 +40,9 @@ export class UpdateCustomComponent implements OnInit {
     }
 
 
-    deleteCustom(id: string): void {
+    updateCustom(id: string, updatedBook: any): void {
         console.log('%c delete book id ', 'font-weight: bold; color: fuchsia;', id);
-        this.booksGenese.deleteCustom(`${homeEnv.path}/${id}`).subscribe((response: ResponseStatus) => {
+        this.booksGenese.updateCustom(`${homeEnv.path}/${id}`, updatedBook).subscribe((response: ResponseStatus) => {
             console.log('%c Genese delete response ', 'font-weight: bold; color: red;', response);
             this.getData();
         });

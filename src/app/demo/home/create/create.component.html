@@ -6,8 +6,7 @@
     <p>* You must add a genese param to your model like this :</p>
     <pre>{{model | json}}</pre>
     <p>* The endpoint must wait a POST method.</p>
-    <p>* The api path must respect the REST api standards for a create() method, just like this :</p>
-    <p>http://my-path/book</p>
+    <p>* The api path must respect the REST api standards for a POST method (example : http://my-path/book/id)</p>
     <p>In this example, the create() method adds a new book with the NestJS backend.</p>
     <p>Open your navigator console. In the tab "Network", you'll find the data received from POST request. In the tab "Console", you'll can compare these original data with the formatted objects sent as Observable by Genese. As you can see, Genese formatted the returned object with "Book" type.</p>
 </div>

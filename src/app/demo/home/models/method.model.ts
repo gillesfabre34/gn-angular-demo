@@ -9,4 +9,5 @@ export type Method =
     | 'get-one'
     | 'get-one-custom'
     | 'translate'
-    | 'update';
+    | 'update'
+    | 'update-custom';
