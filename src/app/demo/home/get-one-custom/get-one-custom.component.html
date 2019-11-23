@@ -1,3 +1,8 @@
 <div class="method-container">
-    <h1>getOneCustom()</h1>
+    <p class="title">getOneCustom(path: string, params?: GetOneParams): Observable< T ></p>
+    <p>getOneCustom() method is used to get a T object in database with a GET http request</p>
+    <p>Contrary to getOne() method, you can use a custom api path and you don't need to parameter your model with a genese property. Moreover, you can add some params, like query params.</p>
+    <p>The backend must wait a GET http request.</p>
+    <p>In this example, the getOne() method gets the book with the id 1 from the NestJS backend.</p>
+    <p>Open your navigator console. In the tab "Network", you'll find the data received from GET request. In the tab "Console", you'll can compare these original data with the formatted objects sent as Observable by Genese. As you can see, Genese formatted the returned object with "Book" type.</p>
 </div>

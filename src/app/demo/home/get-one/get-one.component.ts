@@ -11,6 +11,11 @@ import { Book } from '../models/book.model';
 export class GetOneComponent implements OnInit {
 
     public booksGenese: Genese<Book>;
+    public model = {
+        genese: {
+            path: '/books'
+        }
+    };
 
     // --------------------------------------------------
     //                     CONSTRUCTOR
