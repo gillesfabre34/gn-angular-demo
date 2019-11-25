@@ -6,6 +6,6 @@
     <p>In this example, the getAllCustom() method receives the list of books sent by the NestJS backend. </p>
     <p>Open your navigator console. In the tab "Network", you'll find the data received from GET request. In the tab "Console", you'll can compare these original data with the formatted objects sent as Observable by Genese. As you can see, Genese formatted all these objects with "Book" type.</p>
     <div class="dataList">
-        <app-data-list></app-data-list>
+        <app-data-list [data]="data"></app-data-list>
     </div>
 </div>

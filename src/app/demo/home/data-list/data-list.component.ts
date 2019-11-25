@@ -88,16 +88,6 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
         if (Array.isArray(this.data)) {
             this.displayMatTableDataSource({results: this.data, totalResults: this.data.length});
         }
-        // console.log('%c getAll this.booksGenese ', 'font-weight: bold; color: black;', this.booksGenese);
-        // console.log('%c getAll homeEnv.path ', 'font-weight: bold; color: black;', homeEnv.path);
-        // this.booksGenese
-        //     .getAll()
-        //     .subscribe((response: Book[]) => {
-        //         console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
-        //         if (Array.isArray(response)) {
-        //             this.displayMatTableDataSource({results: response, totalResults: response.length});
-        //         }
-        //     });
     }
 
     /**
