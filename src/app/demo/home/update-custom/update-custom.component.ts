@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOK } from '../mocks/book.mock';
 import { Book } from '../models/book.model';
-import { Genese, GeneseService } from 'gn-angular';
+import { Genese, GeneseService } from 'genese-angular';
 import { homeEnv } from '../homeEnv';
 import { ResponseStatus } from '../../enums/response-status';
 

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Method } from './models/method.model';
-import { Book } from './models/book.model';
-// import { mapToObject } from 'gn-angular';
 
 
 @Component({
@@ -35,12 +33,6 @@ export class HomeComponent implements OnInit {
     // --------------------------------------------------
 
     ngOnInit(): void {
-        const book = {
-            author: 'zzz'
-        };
-        console.log('%c ngOnInit book ', 'font-weight: bold; color: brown;', book);
-        // const mapped = geneseMapper(book, Book);
-        // console.log('%c ngOnInit mapped ', 'font-weight: bold; color: brown;', mapped);
     }
 
     displayMethod(method: Method): void {
