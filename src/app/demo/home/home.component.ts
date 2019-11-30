@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Method } from './models/method.model';
 import { Book } from './models/book.model';
-// import { mapToObject } from 'genese-angular';
+// import { mapToObject } from 'gn-angular';
 
 
 @Component({

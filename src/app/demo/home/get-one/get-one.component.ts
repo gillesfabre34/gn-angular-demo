@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Genese, GeneseService } from 'genese-angular';
+import { Genese, GeneseService } from 'gn-angular';
 import { Book } from '../models/book.model';
 
 

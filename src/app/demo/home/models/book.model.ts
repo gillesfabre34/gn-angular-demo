@@ -1,4 +1,4 @@
-import { GeneseModelEnvironment } from 'genese-angular';
+import { GeneseModelEnvironment } from 'gn-angular';
 
 
 export class Book {
