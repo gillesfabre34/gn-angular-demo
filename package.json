@@ -17,7 +17,7 @@
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "private": true,
+    "private": false,
     "dependencies": {
         "@angular-devkit/build-angular": "^0.802.0",
         "@angular/animations": "^8.2.0",
