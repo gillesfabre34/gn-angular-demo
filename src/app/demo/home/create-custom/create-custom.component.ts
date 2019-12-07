@@ -39,7 +39,7 @@ export class CreateCustomComponent implements OnInit {
 
 
     create() {
-        this.booksGenese.createCustom(`${homeEnv.path}/create-custom`, BOOK).subscribe((newBook: Book) => {
+        this.booksGenese.createCustom(`${homeEnv.path}/custom-path`, BOOK).subscribe((newBook: Book) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
         });
     }

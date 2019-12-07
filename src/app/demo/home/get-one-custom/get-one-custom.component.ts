@@ -36,7 +36,7 @@ export class GetOneCustomComponent implements OnInit {
      * @param id
      */
     getOneCustom(id: string): void {
-        this.booksGenese.getOneCustom(`${homeEnv.path}/${id}`).subscribe((book: Book) => {
+        this.booksGenese.getOneCustom(`${homeEnv.path}/custom-path/${id}`).subscribe((book: Book) => {
             console.log('%c GeneseAbstract getOneCustom book ', 'font-weight: bold; color: fuchsia;', book);
         });
     }

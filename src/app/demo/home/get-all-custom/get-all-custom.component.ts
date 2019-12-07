@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
+import { homeEnv } from '../homeEnv';
 
 
 @Component({
@@ -39,9 +40,9 @@ export class GetAllCustomComponent implements OnInit {
 
     getData(): void {
         this.booksGenese
-            .getAll()
+            .getAllCustom(`${homeEnv.path}/custom-path`)
             .subscribe((response: Book[]) => {
-                console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
+                console.log('%c getAllCustom response ', 'font-weight: bold; color: black;', response);
                 this.data = response;
             });
     }

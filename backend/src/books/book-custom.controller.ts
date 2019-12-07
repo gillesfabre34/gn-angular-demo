@@ -1,12 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
-import { BookService } from '../services/book.service';
-import { CreateBookDTO } from '../dto/create-book.dto';
-import { Book } from '../models/book.model';
-import { GetAllResponse } from '../../generic/services/generic-data.service';
 import chalk from 'chalk';
+import { BookService } from './services/book.service';
+import { GetAllResponse } from '../generic/services/generic-data.service';
+import { Book } from './models/book.model';
+import { CreateBookDTO } from './dto/create-book.dto';
 
-@Controller('books')
-export class BookController {
+@Controller('custom-path')
+export class BookCustomController {
     constructor(private booksService: BookService) { }
 
     @Get(':bookId')

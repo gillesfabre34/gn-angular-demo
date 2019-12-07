@@ -15,7 +15,7 @@ export abstract class GenericDataService<T> {
      * @param query
      */
     getOne(id: string, @Query() query): Promise<T> {
-        const dataFromDb = this.books as any[]; // TODO : link to real db
+        const dataFromDb = this.books as any[];
         return new Promise(resolve => {
             const book = dataFromDb.find(book => book.id === +id);
             if (!book) {
@@ -33,7 +33,7 @@ export abstract class GenericDataService<T> {
      */
     getAll(@Query() params: GnRequest): Promise<any> {
         return new Promise(resolve => {
-            let dataFromDb = this.books as T[]; // TODO : link to real db
+            let dataFromDb = this.books as T[];
             if (params && params.gnExtract) {
                 dataFromDb = this.extractFieldsFromData(dataFromDb, JSON.parse(params.gnExtract.toString()));
             }
@@ -52,7 +52,7 @@ export abstract class GenericDataService<T> {
             return of(undefined).toPromise();
         }
         return new Promise(resolve => {
-            let dataFromDb = this.books as T[]; // TODO : link to real db
+            let dataFromDb = this.books as T[];
             if (params.gnExtract) {
                 dataFromDb = this.extractFieldsFromData(dataFromDb, JSON.parse(params.gnExtract.toString()));
             }
@@ -92,7 +92,7 @@ export abstract class GenericDataService<T> {
             return data;
         }
         const parsedModel = JSON.parse(extractionModel);
-        console.log(chalk.cyan.bold('extractFieldsFromData parsedModel'), parsedModel);
+        console.log(chalk.cyan('extractFieldsFromData parsedModel'), parsedModel);
         const result = {};
         for (const key of Object.keys(parsedModel)) {
             Object.assign(result, {[key]: this.extractFieldsForOneProperty(data, key, parsedModel[key])});
