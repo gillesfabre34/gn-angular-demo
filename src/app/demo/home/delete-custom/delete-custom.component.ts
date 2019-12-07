@@ -41,9 +41,8 @@ export class DeleteCustomComponent implements OnInit {
 
 
     deleteCustom(id: string): void {
-        console.log('%c delete book id ', 'font-weight: bold; color: fuchsia;', id);
-        this.booksGenese.deleteCustom(`${homeEnv.path}/custom-path/${id}`).subscribe((response: ResponseStatus) => {
-            console.log('%c Genese delete response ', 'font-weight: bold; color: red;', response);
+        this.booksGenese.deleteCustom(`/custom-path/${id}`).subscribe((response: ResponseStatus) => {
+            console.log('%c Genese deleteCustom response ', 'font-weight: bold; color: red;', response);
             this.getData();
         });
     }

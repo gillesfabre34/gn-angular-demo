@@ -1,6 +1,6 @@
 {
     "name": "genese-angular-demo",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "author": {
         "name": "Gilles Fabre",
         "url": "http://gillesfabre.com/"
@@ -78,6 +78,6 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/gillesfabre34/genese-angular"
+        "url": "https://github.com/gillesfabre34/genese-angular-demo"
     }
 }

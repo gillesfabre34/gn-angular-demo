@@ -44,7 +44,6 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
      * Component initialization
      */
     ngOnInit(): void {
-        console.log('%c ngOnInit this.data ', 'font-weight: bold; color: fuchsia;', this.data);
         this.paginator.pageIndex = this.pageIndex;
         this.paginator.pageSize = this.pageSize;
         this.getAll();

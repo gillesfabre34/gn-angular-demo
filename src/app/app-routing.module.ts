@@ -12,6 +12,7 @@ import { DeleteComponent } from './demo/home/delete/delete.component';
 import { DeleteCustomComponent } from './demo/home/delete-custom/delete-custom.component';
 import { UpdateComponent } from './demo/home/update/update.component';
 import { UpdateCustomComponent } from './demo/home/update-custom/update-custom.component';
+import { WelcomeComponent } from './demo/home/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
         component: HomeComponent,
         canActivate: [AuthGuardService],
         children: [
+            {path: '', component: WelcomeComponent, canActivate: [AuthGuardService]},
             {path: 'create', component: CreateComponent, canActivate: [AuthGuardService]},
             {path: 'create-custom', component: CreateCustomComponent, canActivate: [AuthGuardService]},
             {path: 'delete', component: DeleteComponent, canActivate: [AuthGuardService]},

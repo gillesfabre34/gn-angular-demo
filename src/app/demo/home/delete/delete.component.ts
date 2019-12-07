@@ -39,7 +39,6 @@ export class DeleteComponent implements OnInit {
 
 
     delete(id: string): void {
-        console.log('%c delete book id ', 'font-weight: bold; color: fuchsia;', id);
         this.booksGenese.delete(id).subscribe((response: ResponseStatus) => {
             console.log('%c Genese delete response ', 'font-weight: bold; color: red;', response);
             this.getData();
@@ -51,7 +50,6 @@ export class DeleteComponent implements OnInit {
         this.booksGenese
             .getAll()
             .subscribe((response: Book[]) => {
-                console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
                 this.data = response;
             });
     }

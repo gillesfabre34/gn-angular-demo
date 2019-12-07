@@ -4,17 +4,18 @@ import { Book } from '../models/book.model';
 
 
 @Component({
-    selector: 'app-get-one-custom',
-    templateUrl: './get-one-custom.component.html',
-    styleUrls: ['./get-one-custom.component.scss']
+    selector: 'app-welcome',
+    templateUrl: './welcome.component.html',
+    styleUrls: ['./welcome.component.scss']
 })
-export class GetOneCustomComponent implements OnInit {
-
-    // --------------------------------------------------
-    //                     PROPERTIES
-    // --------------------------------------------------
+export class WelcomeComponent implements OnInit {
 
     public booksGenese: Genese<Book>;
+    public model = {
+        genese: {
+            path: '/books'
+        }
+    };
 
     // --------------------------------------------------
     //                     CONSTRUCTOR
@@ -27,16 +28,16 @@ export class GetOneCustomComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getOneCustom('1');
+        this.getOne('1');
     }
 
     /**
      * Get one book for a given id
      * @param id
      */
-    getOneCustom(id: string): void {
-        this.booksGenese.getOneCustom(`/custom-path/${id}`).subscribe((book: Book) => {
-            console.log('%c GeneseAbstract getOneCustom book ', 'font-weight: bold; color: green;', book);
+    getOne(id: string): void {
+        this.booksGenese.getOne(id).subscribe((book: Book) => {
+            console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
         });
     }
 }

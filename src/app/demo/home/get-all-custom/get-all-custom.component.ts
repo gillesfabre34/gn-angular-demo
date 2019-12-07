@@ -40,7 +40,7 @@ export class GetAllCustomComponent implements OnInit {
 
     getData(): void {
         this.booksGenese
-            .getAllCustom(`${homeEnv.path}/custom-path`)
+            .getAllCustom('/custom-path')
             .subscribe((response: Book[]) => {
                 console.log('%c getAllCustom response ', 'font-weight: bold; color: black;', response);
                 this.data = response;
