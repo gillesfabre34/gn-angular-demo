@@ -1,6 +1,6 @@
 {
     "name": "genese-angular-demo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": {
         "name": "Gilles Fabre",
         "url": "http://gillesfabre.com/"
@@ -75,6 +75,13 @@
         "tslint": "~5.18.0",
         "typescript": "~3.5.3"
     },
+    "keywords": [
+        "genese-angular",
+        "genese-mapper",
+        "angular",
+        "generic angular data services",
+        "example genese-angular"
+    ],
     "license": "MIT",
     "repository": {
         "type": "git",
