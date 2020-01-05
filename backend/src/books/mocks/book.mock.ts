@@ -16,7 +16,8 @@ export const BOOKS = [
                         country: 'Angleterre'
                     },
                     en: {
-                        country: 'England'
+                        country: 'England',
+                        incorrect: 'Incorrect property'
                     }
                 }
             },
@@ -48,9 +49,24 @@ export const BOOKS = [
             en: {
                 type: 'novels'
             },
+            es: {
+                type: 'novelas',
+                incorrect: 'incorrect property'
+            },
             fr: {
                 type: 'nouvelles'
+            },
+            de: {
+                incorrect: 'incorrect'
             }
+        },
+        librariesClassification: {
+            sauramps: 'E223',
+            fnac: 'Z217'
+        },
+        librariesRate: {
+            sauramps: '18',
+            fnac: '15'
         }
     },
     {

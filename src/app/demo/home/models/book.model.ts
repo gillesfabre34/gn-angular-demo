@@ -28,7 +28,7 @@ export class Book {
         name: '',
         year: '',
         gnTranslate: {
-            gnIndexableKey: {
+            gnIndexableType: {
                 country: ''
             }
         }
@@ -46,14 +46,23 @@ export class Book {
             country: ''
         }
     };
-
+    public librariesClassification?: {
+        [key: string]: string
+    } = {
+        gnIndexableType: ''
+    };
+    public librariesRate?: {
+        [key: string]: number
+    } = {
+        gnIndexableType: 0
+    };
     public year ?= '';
     public gnTranslate?: {
         [key: string]: {
             type: string
         }
     } = {
-        gnIndexableKey: {
+        gnIndexableType: {
             type: ''
         }
     };
