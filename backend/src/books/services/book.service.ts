@@ -14,9 +14,7 @@ export class BookService extends GenericDataService<Book> {
      * @param book
      */
     addBook(book): Promise<any> {
-        console.log('addBook book', book);
         return new Promise(resolve => {
-            console.log('addBook resolve', resolve);
             this.books.push(book);
             resolve(this.books);
         });

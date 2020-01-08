@@ -5,7 +5,19 @@ export const BOOKS = [
         bookTitle: 'The caves of steel',
         booleans: [true, false, false, true],
         categories: ['novels', 'science-fiction'],
-        codes: [2, 34, 53],
+        codeArrayOfArraysOfStrings: [['A', 'B', 'C'], ['D', 'E'], [], ['G']],
+        codeArrayOfArraysOfObjects: [
+            [
+                {codeNumber: 2, codeString: 'A'},
+                {codeNumber: 3, codeString: 'B'},
+                {codeNumber: 4, codeString: 'C'}
+            ],
+            [],
+            [
+                {codeNumber: 5, codeString: 'D'}
+            ],
+        ],
+        codeNumbers: [2, 34, 53],
         description: 'In this novel, Isaac Asimov introduces Elijah Baley and R. Daneel Olivaw, later his favorite protagonists',
         editions: [
             {

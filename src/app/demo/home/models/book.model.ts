@@ -14,7 +14,9 @@ export class Book {
 
 
     public categories?: string[] = [''];
-    public codes?: number[] = [0];
+    public codeArrayOfArraysOfStrings?: string[][] = [['']];
+    public codeArrayOfArraysOfObjects?: {codeNumber: number, codeString: string}[][] = [[{codeNumber: 0, codeString: ''}]];
+    public codeNumbers?: number[] = [0];
     public description ? = '';
     public editions?: {
         name?: string,
