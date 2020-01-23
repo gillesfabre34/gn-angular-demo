@@ -4,7 +4,9 @@ import { BookService } from './services/book.service';
 import { GetAllResponse } from '../generic/services/generic-data.service';
 import { Book } from './models/book.model';
 import { CreateBookDTO } from './dto/create-book.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('custom path')
 @Controller('custom-path')
 export class BookCustomController {
     constructor(private booksService: BookService) { }
