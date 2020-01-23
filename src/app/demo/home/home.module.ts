@@ -14,6 +14,7 @@ import { DeleteCustomComponent } from './delete-custom/delete-custom.component';
 import { UpdateComponent } from './update/update.component';
 import { UpdateCustomComponent } from './update-custom/update-custom.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ],
     imports: [
         CoreModule,
+        FormsModule,
 
         AppRoutingModule
     ],

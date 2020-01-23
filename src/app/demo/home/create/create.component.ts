@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BOOK } from '../mocks/book.mock';
 import { Book } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
 
@@ -15,6 +14,7 @@ export class CreateComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
+    public book: Book = {};
     public booksGenese: Genese<Book>;
     public model = {
         genese: {
@@ -33,15 +33,14 @@ export class CreateComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.create();
     }
 
 
     create() {
-        this.booksGenese.create(BOOK).subscribe((newBook: Book) => {
+        console.log('%c create this.book ', 'font-weight: bold; color: fuchsia;', this.book);
+        this.booksGenese.create(this.book).subscribe((newBook: Book) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
         });
     }
-
 
 }
