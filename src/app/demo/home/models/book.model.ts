@@ -1,4 +1,5 @@
 import { GeneseModelEnvironment } from 'genese-angular';
+import { Category } from '../enums/category';
 
 
 export class Book {
@@ -12,8 +13,7 @@ export class Book {
     public id ?= '';
     public author ?= '';
 
-
-    public categories?: string[] = [''];
+    public categories?: Category[] = [Category.none];
     public codeArrayOfArraysOfStrings?: string[][] = [['']];
     public codeArrayOfArraysOfObjects?: {codeNumber: number, codeString: string}[][] = [[{codeNumber: 0, codeString: ''}]];
     public codeNumbers?: number[] = [0];

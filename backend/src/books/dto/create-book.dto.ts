@@ -1,4 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { Category } from '../enums/category';
 
 export class CreateBookDTO {
     @ApiProperty({
@@ -15,4 +16,10 @@ export class CreateBookDTO {
 
     @ApiPropertyOptional()
     readonly description: string;
+
+    @ApiPropertyOptional({
+        description: 'The book\'s category',
+        default: '',
+    })
+    readonly category: Category;
 }

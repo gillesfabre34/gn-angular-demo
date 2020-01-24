@@ -3,8 +3,8 @@ import { BookService } from '../services/book.service';
 import { CreateBookDTO } from '../dto/create-book.dto';
 import { Book } from '../models/book.model';
 import { GetAllResponse } from '../../generic/services/generic-data.service';
-import chalk from 'chalk';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Category } from '../enums/category';
 
 @ApiTags('Books')
 @Controller('books')
@@ -37,6 +37,7 @@ export class BookController {
 
     @Post()
     @ApiOperation({ summary: 'Create a book' })
+    @ApiQuery({name: 'category', enum: Category})
     async addBook(@Body() createBookDTO: CreateBookDTO) {
         const book = await this.booksService.addBook(createBookDTO);
         return book;
