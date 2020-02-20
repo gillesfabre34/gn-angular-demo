@@ -56,17 +56,17 @@ export class HomeComponent implements OnInit {
      */
     // getAllPrimitives(id: string): void {
     //     this.categoriesGenese
-    //         .getAll(`/books/${id}/categories`)
+    //         .getAll(`/app/${id}/categories`)
     //         .subscribe((data: string[]) => {
     //             console.log('%c getAllPrimitives categories ', 'font-weight: bold; color: brown;', data);
     //         });
     //     this.codesGenese
-    //         .getAll(`/books/${id}/codes`)
+    //         .getAll(`/app/${id}/codes`)
     //         .subscribe((data: number[]) => {
     //             console.log('%c getAllPrimitives codes ', 'font-weight: bold; color: brown;', data);
     //         });
     //     this.booleansGenese
-    //         .getAll(`/books/${id}/booleans`)
+    //         .getAll(`/app/${id}/booleans`)
     //         .pipe()
     //         .subscribe((data: boolean[]) => {
     //             console.log('%c getAllPrimitives codes ', 'font-weight: bold; color: brown;', data);
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
     // }
 
     /**
-     * Get all the books with pagination
+     * Get all the app with pagination
      */
     // getAllWithPagination(): void {
     //     this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];

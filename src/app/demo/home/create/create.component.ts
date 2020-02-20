@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
     public booksGenese: Genese<Book>;
     public model = {
         genese: {
-            path: '/books'
+            path: '/app'
         }
     };
 

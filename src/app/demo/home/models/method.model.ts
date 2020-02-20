@@ -6,6 +6,7 @@ export type Method =
     | 'get-all'
     | 'get-all-custom'
     | 'get-all-with-pagination'
+    | 'get-array'
     | 'get-one'
     | 'get-one-custom'
     | 'translate'

@@ -1,5 +1,5 @@
 import { HttpException, Injectable, Query } from '@nestjs/common';
-import { BOOKS } from '../../books/mocks/book.mock';
+import { BOOKS } from '../../app/mocks/book.mock';
 import chalk from 'chalk';
 import { GnRequest } from '../gn-request';
 import { of } from 'rxjs';

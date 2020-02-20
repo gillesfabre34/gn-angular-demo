@@ -21,7 +21,7 @@ export class UpdateCustomComponent implements OnInit {
     public data: any[] = [];
     public model = {
         genese: {
-            path: '/books'
+            path: '/app'
         }
     };
 

@@ -1,4 +1,6 @@
-export const BOOKS = [
+import { Book } from '../models/book.model';
+
+export const BOOKS: Book[] = [
     {
         id: 1,
         author: 'Isaac Asimov',
@@ -53,7 +55,6 @@ export const BOOKS = [
                 country: 'France',
                 street: 'Champs-Elysées'
             },
-            collection: undefined
         },
         irrelevantProperty: 'Irrelevant',
         isAvailable: true,
@@ -96,7 +97,7 @@ export const BOOKS = [
     {
         id: 4,
         title: 'Robots and Empire',
-        description: 'The Earthman Elijah Baley (the detective hero of the previous Robot books) has died nearly two centuries earlier',
+        description: 'The Earthman Elijah Baley (the detective hero of the previous Robot app) has died nearly two centuries earlier',
         author: 'Isaac Asimov'
     },
     {

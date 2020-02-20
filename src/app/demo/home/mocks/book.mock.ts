@@ -1,6 +1,6 @@
 import { Book } from '../models/book.model';
 
-export const BOOKS: Book[] = [
+export const BOOKS: any[] = [
     {
         id: '1',
         title: 'The caves of steel',
@@ -48,7 +48,7 @@ export const BOOKS: Book[] = [
     {
         id: '4',
         title: 'Robots and Empire',
-        description: 'The Earthman Elijah Baley (the detective hero of the previous Robot books) has died nearly two centuries earlier',
+        description: 'The Earthman Elijah Baley (the detective hero of the previous Robot app) has died nearly two centuries earlier',
         author: 'Isaac Asimov'
     },
     {

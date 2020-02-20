@@ -1,5 +1,6 @@
 import { GeneseModelEnvironment } from 'genese-angular';
 import { Category } from '../enums/category';
+import { Author } from '../../../../../backend/src/app/models/author.model';
 
 
 export class Book {
@@ -11,7 +12,7 @@ export class Book {
     public title ?= '';
 
     public id ?= '';
-    public author ?= '';
+    public author ?= new Author();
 
     public categories?: Category[] = [Category.none];
     public codeArrayOfArraysOfStrings?: string[][] = [['']];
@@ -69,7 +70,7 @@ export class Book {
         }
     };
     public genese?: GeneseModelEnvironment = {
-        path: '/books'
+        path: '/app'
     };
 }
 

@@ -80,7 +80,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
 
 
     /**
-     * Get all the books with pagination
+     * Get all the app with pagination
      */
     getAll(): void {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
@@ -90,7 +90,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
     }
 
     /**
-     * Get all the books with pagination
+     * Get all the app with pagination
      */
     getAllWithPagination(): void {
         this.displayedColumns = ['id', 'author', 'title', 'description', 'actions'];
@@ -110,7 +110,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
 
 
     /**
-     * Display the books list in a MatTable with pagination
+     * Display the app list in a MatTable with pagination
      * @param data
      */
     displayMatTableDataSource(data: GetAllResponse<Book>) {

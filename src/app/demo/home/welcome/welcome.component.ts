@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
     public booksGenese: Genese<Book>;
     public model = {
         genese: {
-            path: '/books'
+            path: '/app'
         }
     };
 
@@ -37,7 +37,7 @@ export class WelcomeComponent implements OnInit {
      */
     getOne(id: string): void {
         this.booksGenese.getOne(id).subscribe((book: Book) => {
-            console.log('%c GeneseAbstract getOne book ', 'font-weight: bold; color: green;', book);
+            console.log('%c GeneseAbstract getArrayOfStrings book ', 'font-weight: bold; color: green;', book);
         });
     }
 }

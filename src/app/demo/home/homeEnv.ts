@@ -1,3 +1,3 @@
 export const homeEnv = {
-    path: '/books'
+    path: '/app'
 };
