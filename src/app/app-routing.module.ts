@@ -13,6 +13,7 @@ import { DeleteCustomComponent } from './demo/home/delete-custom/delete-custom.c
 import { UpdateComponent } from './demo/home/update/update.component';
 import { UpdateCustomComponent } from './demo/home/update-custom/update-custom.component';
 import { WelcomeComponent } from './demo/home/welcome/welcome.component';
+import { GetArrayComponent } from './demo/home/get-array/get-array.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
             {path: 'delete-custom', component: DeleteCustomComponent, canActivate: [AuthGuardService]},
             {path: 'get-all', component: GetAllComponent, canActivate: [AuthGuardService]},
             {path: 'get-all-custom', component: GetAllCustomComponent, canActivate: [AuthGuardService]},
+            {path: 'get-array', component: GetArrayComponent, canActivate: [AuthGuardService]},
             {path: 'get-one', component: GetOneComponent, canActivate: [AuthGuardService]},
             {path: 'get-one-custom', component: GetOneCustomComponent, canActivate: [AuthGuardService]},
             {path: 'update', component: UpdateComponent, canActivate: [AuthGuardService]},

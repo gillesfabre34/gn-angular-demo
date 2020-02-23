@@ -26,7 +26,6 @@ export class BookService extends GenericDataService<Book> {
      * @param bookID
      */
     deleteBook(bookID): Promise<any> {
-        console.log(chalk.greenBright.bold('deleteBook bookID : ', bookID));
         const id = Number(bookID);
         return new Promise(resolve => {
             const index = this.books.findIndex(book => book.id === id);

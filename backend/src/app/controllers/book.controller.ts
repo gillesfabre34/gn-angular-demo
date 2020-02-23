@@ -19,7 +19,6 @@ export class BookController {
         type: Book,
     })
     async getBook(@Param('bookId') bookId, @Query() params) {
-        console.log('getBook bookId', bookId);
         const book = await this.booksService.getOne(bookId, params);
         return book;
     }

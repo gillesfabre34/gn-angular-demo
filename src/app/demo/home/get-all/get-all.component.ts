@@ -15,7 +15,7 @@ export class GetAllComponent implements OnInit {
     // --------------------------------------------------
 
     public booksGenese: Genese<Book>;
-    public data: any[] = [];
+    public data: Book[] = [];
     public model = {
         genese: {
             path: '/books'

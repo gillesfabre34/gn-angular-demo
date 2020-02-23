@@ -13,7 +13,6 @@ export class BookCustomController {
 
     @Get(':bookId')
     async getBook(@Param('bookId') bookId, @Query() params) {
-        console.log(chalk.green('bookId '), bookId);
         const book = await this.booksService.getOne(bookId, params);
         return book;
     }
