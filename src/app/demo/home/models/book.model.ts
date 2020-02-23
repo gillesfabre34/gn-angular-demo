@@ -70,7 +70,7 @@ export class Book {
         }
     };
     public genese?: GeneseModelEnvironment = {
-        path: '/app'
+        path: '/books'
     };
 }
 

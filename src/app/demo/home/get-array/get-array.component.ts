@@ -13,11 +13,6 @@ export class GetArrayComponent implements OnInit {
 
     public arrayOfArraysOfStringsGenese: Genese<ArrayOfArraysOfStrings>;
     public arrayOfStringsGenese: Genese<ArrayOfStrings>;
-    public model = {
-        genese: {
-            path: '/app'
-        }
-    };
 
     // --------------------------------------------------
     //                     CONSTRUCTOR

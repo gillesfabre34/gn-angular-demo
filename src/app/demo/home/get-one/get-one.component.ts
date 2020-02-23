@@ -15,7 +15,7 @@ export class GetOneComponent implements OnInit {
     public arrayOfArraysOfStringsGenese: Genese<ArrayOfArraysOfStrings>;
     public model = {
         genese: {
-            path: '/app'
+            path: '/books'
         }
     };
 
