@@ -29,7 +29,7 @@ export class TranslateModule {
     constructor(
         translate: TranslateService,
     ) {
-        translate.setDefaultLang('en');
+        translate.use('en');
         if (!!window.localStorage.getItem('language')) {
             translate.use(window.localStorage.getItem('language').toLowerCase());
         } else {

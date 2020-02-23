@@ -78,73 +78,73 @@ export const BOOKS: Book[] = [
             fnac: 'Z217'
         },
         librariesRate: {
-            sauramps: '18',
-            fnac: '15'
+            sauramps: 18,
+            fnac: 15
         }
     },
     {
         id: 2,
-        title: 'The naked sun',
+        bookTitle: 'The naked sun',
         description: 'The story arises from the murder of Rikaine Delmarre',
         author: 'Isaac Asimov'
     },
     {
         id: 3,
-        title: 'The robots of dawn',
+        bookTitle: 'The robots of dawn',
         description: 'Detective Elijah Baley of Earth is training with his son and others to overcome their socially ingrained agoraphobia',
         author: 'Isaac Asimov'
     },
     {
         id: 4,
-        title: 'Robots and Empire',
+        bookTitle: 'Robots and Empire',
         description: 'The Earthman Elijah Baley (the detective hero of the previous Robot app) has died nearly two centuries earlier',
         author: 'Isaac Asimov'
     },
     {
         id: 5,
-        title: 'The Currents of Space',
+        bookTitle: 'The Currents of Space',
         description: 'The story takes place in the context of Trantor\'s rise from a large regional power to a galaxy-wide empire',
         author: 'Isaac Asimov'
     },
     {
         id: 6,
-        title: 'The Stars',
+        bookTitle: 'The Stars',
         description: 'The story was first published with the title Tyrann in Galaxy magazine',
         author: 'Isaac Asimov'
     },
     {
         id: 7,
-        title: 'The Mysterious Affair at Styles',
+        bookTitle: 'The Mysterious Affair at Styles',
         description: 'A detective novel by British writer Agatha Christie. It was written in the middle of the First World War, in 1916',
         author: 'Agatha Christie'
     },
     {
         id: 8,
-        title: 'Richard III',
+        bookTitle: 'Richard III',
         description: 'A historical play by William Shakespeare believed to have been written around 1593',
         author: 'William Shakespeare'
     },
     {
         id: 9,
-        title: 'Hamlet',
+        bookTitle: 'Hamlet',
         description: 'A tragedy written by William Shakespeare sometime between 1599 and 1602',
         author: 'William Shakespeare'
     },
     {
         id: 10,
-        title: 'The Secret Adversary',
+        bookTitle: 'The Secret Adversary',
         description: 'The second published detective fiction novel by British writer Agatha Christie, first published in January 1922',
         author: 'Agatha Christie'
     },
     {
         id: 11,
-        title: 'The Murder on the Links',
+        bookTitle: 'The Murder on the Links',
         description: 'A work of detective fiction by Agatha Christie',
         author: 'Agatha Christie'
     },
     {
         id: 12,
-        title: 'Othello',
+        bookTitle: 'Othello',
         description: 'A tragedy by William Shakespeare, believed to have been written in 1603',
         author: 'William Shakespeare'
     },

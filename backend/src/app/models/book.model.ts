@@ -27,6 +27,14 @@ export class Book {
             street?: string
         }
     };
+    public gnTranslate?: {
+        [key: string]: {
+            type?: string,
+            incorrect?: string
+        }
+    };
+    public irrelevantProperty?: string;
+    public isAvailable?: boolean;
     public librariesClassification?: {
         [key: string]: string
     };
@@ -34,12 +42,6 @@ export class Book {
         [key: string]: number
     };
     public year ?= '';
-    public gnTranslate?: {
-        [key: string]: {
-            type: string
-        }
-    };
-    public irrelevantProperty?: string;
 
     constructor() {}
 
