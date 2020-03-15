@@ -9,11 +9,6 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e",
-        "compodoc": "npx compodoc -p src/tsconfig.app.json --theme 'vagrant'",
-        "package": "cd dist/genese && tar -zcvf retex.tar.gz ."
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
